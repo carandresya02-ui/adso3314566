@@ -33,6 +33,35 @@
                     font-size: 1.4rem;
                 }
             }
+            menu {
+                display: flex;
+                flex-direction: column;
+                gap: 0.7rem;
+                a:link, a:visited {
+                    background-color: darkgray;
+                    color: black;
+                    border-radius: 10rem;
+                    display: flex;
+                    text-decoration: none;
+                    span {
+                        background-color: rgb(178, 34, 41);
+                        color: floralwhite;
+                        border-radius: 50%;
+                        font-size: 2rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 80px;
+                        width: 80px;
+                    }
+                    h4 {
+                        margin: 0;
+                    }
+                small {
+                    
+                    }
+                }
+            }
         }
     </style>
 </head>
@@ -41,7 +70,35 @@
         <h1>ADSO 3314566</h1>
         <img src="soyyo.png" alt="">
         <h4>Carlos Andres Yepes</h4>
-
+        <menu>
+            <a href="01-emmet/">
+                <span>01</span>
+                <aside>
+                    <h4>Emmet</h4>
+                    <small>Work Flow - Markup & Stylling</small>
+                </aside>
+            </a>
+            <a href="02-html/">
+                <span>02</span>
+                <aside>
+                    <h4>Html</h4>
+                    <small>Structure - Hypertext Markup Language</small>
+                </aside>
+            <a href="03-css/">
+                <span>03</span>
+                <aside>
+                    <h4>Css</h4>
+                    <small>Look & Fell - Cascading Style Sheets</small>
+                </aside>
+            </a>
+            <a href="04-js/">
+                <span>04</span>
+                <aside>
+                    <h4>Javascript</h4>
+                    <small>Behavior - Programing Language</small>
+                </aside>
+            </a>
+        </menu>
     </main>
 </body>
 </html>

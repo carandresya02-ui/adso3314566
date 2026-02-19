@@ -16,6 +16,10 @@
             min-height: 100dvh;
             main {
                 h1 {
+                    font-family: "Federant", serif;
+                    font-weight: 400;
+                    font-style: normal;
+                    font-family: "Federant";
                     font-size: 3.4rem;
                     margin: 0;
                 }
@@ -40,8 +44,10 @@
                 a:link, a:visited {
                     background-color: darkgray;
                     color: black;
-                    border-radius: 10rem;
+                    border-radius: 12rem;
+                    padding: 0.4rem;
                     display: flex;
+                    align-items: center;
                     text-decoration: none;
                     span {
                         background-color: rgb(178, 34, 41);
@@ -56,13 +62,23 @@
                     }
                     h4 {
                         margin: 0;
+                        text-align-last: left;
+                        text-indent: 0.2rem;
+                        width: 225px;
                     }
                 small {
-                    
-                    }
+                    display: block;
+                    font-size: 0.7rem;
+                    text-indent: 0.2rem;
+                    width: 225px;
+                }
+                transition: transform 0.4s ease-in;
+                &:hover {
+                    transform: scale(1.05) translateX(15px);
                 }
             }
         }
+    }
     </style>
 </head>
 <body>
@@ -71,27 +87,27 @@
         <img src="soyyo.png" alt="">
         <h4>Carlos Andres Yepes</h4>
         <menu>
-            <a href="01-emmet/">
+            <a href="01-emmet/index.html">
                 <span>01</span>
                 <aside>
                     <h4>Emmet</h4>
                     <small>Work Flow - Markup & Stylling</small>
                 </aside>
             </a>
-            <a href="02-html/">
+            <a href="02-html/index.html">
                 <span>02</span>
                 <aside>
                     <h4>Html</h4>
                     <small>Structure - Hypertext Markup Language</small>
                 </aside>
-            <a href="03-css/">
+            <a href="03-css/index.html">
                 <span>03</span>
                 <aside>
                     <h4>Css</h4>
                     <small>Look & Fell - Cascading Style Sheets</small>
                 </aside>
             </a>
-            <a href="04-js/">
+            <a href="04-js/index.html">
                 <span>04</span>
                 <aside>
                     <h4>Javascript</h4>

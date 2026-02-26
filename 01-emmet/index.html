@@ -33,7 +33,8 @@
                     opacity: 1;
                 }
             }
-           
+            
+
             a {
                 position: fixed;
                 left: 20px;
@@ -59,19 +60,33 @@
                 background: #1e1e1e;
                 padding: 25px;
                 border-radius: 15px;
-                width: 400px;
+                width: 500px;
                 margin: 30px auto;
                 color: white;
+                text-align: left;
+                }
+                
+                h2 {
+                border-bottom: 2px solid #00ff88; /* Línea verde */
+                padding-bottom: 8px;              /* Espacio entre texto y línea */
+                margin-bottom: 15px;
+                }
+
+                xmp{
+                color: #caf119;
+                background-color: #111;     /* Fondo oscuro interno */
+                border: 1px solid #00ff88;  /* Borde verde */
+                padding: 6px;              /* Espacio interno */
+                border-radius: 10px;         /* Bordes redondeados */
+                color: #00ff88;             /* Texto verde */
+                display: block;
             }
 
             main {
             text-align: center;
-
-            .cuadro {
-            text-align: left;
-            }  
+            }
         }
-    }
+    
         </style>
     </head>
 
@@ -90,7 +105,7 @@
             <section class="cuadro">
                 <h2>Nesting ⬇️</h2>
                 <h4>Example:</h4>
-                <p>ul>li>a</p>
+                <p>ul>li>a ⬇️</p>
                 <h4>Result:</h4>
 
 <xmp>
@@ -103,7 +118,7 @@
     <section class="cuadro">
         <h2>Siblings ➕</h2>
         <h4>Example:</h4>
-        <p>section+header+nav</p>
+        <p>section+header+nav ➕</p>
         <h4>Result:</h4>
 
 <xmp>
@@ -116,7 +131,7 @@
     <section class="cuadro">
         <h2>Multiplication 🔁</h2>
         <h4>Example:</h4>
-        <p>ul>li*3</p>
+        <p>ul>li*3 🔁</p>
         <h4>Result:</h4>
 
 <xmp>
@@ -131,7 +146,7 @@
     <section class="cuadro">
         <h2>Class 🎯</h2>
         <h4>Example:</h4>
-        <p>div.contenedor</p>
+        <p>div.contenedor 🎯</p>
         <h4>Result:</h4>
 
 <xmp>
@@ -142,7 +157,7 @@
     <section class="cuadro">
         <h2>Multiple classes 🧩</h2>
         <h4>Example:</h4>
-        <p>div.clase1.clase2.clasen</p>
+        <p>div.clase1.clase2.clasen 🧩</p>
         <h4>Result:</h4>
 
 <xmp>
@@ -153,7 +168,7 @@
     <section class="cuadro">
         <h2>Identifier attribute 🆔</h2>
         <h4>Example:</h4>
-        <p>nav#menu</p>
+        <p>nav#menu 🆔</p>
         <h4>Result:</h4>
 <xmp>
 <nav id="menu"></nav>
@@ -163,13 +178,13 @@
     <section class="cuadro">
         <h2>Add text ✍️</h2>
         <h4>Example:</h4>
-        <p>div{Lorem Ipsum Dolor}</p>
+        <p>div{Lorem Ipsum Dolor} ✍️</p>
         <h4>Result:</h4>
 <xmp>
 <div>Lorem Ipsum Dolor</div>   
 </xmp>
     <h4>Example:</h4>
-    <p>a{Click Aqui}</p>
+    <p>a{Click Aqui} ✍️</p>
     <h4>Result:</h4>
 <xmp>
 <a href="">Click Aqui</a>
@@ -179,7 +194,7 @@
     <section class="cuadro">
         <h2>Customize attributes 🔧</h2>
         <h4>Example:</h4>
-        <p>a[href=www.google.com]</p>
+        <p>a[href=www.google.com] 🔧</p>
         <h4>Result:</h4>
 <xmp>
 <a href="www.google.com"></a>
@@ -190,7 +205,7 @@
         <h2>Consecutive numbers 🔢</h2>
         <h4>Example:</h4>
         <p>ul>li.num$*3</p>
-        <p>section>article.sec$$$*3</p>
+        <p>section>article.sec$$$*3 🔢</p>
         <h4>Result:</h4>
 <xmp>
 <ul>
@@ -210,7 +225,7 @@
     <section class="cuadro">
         <h2>Reverse Numbering 🔽</h2>
         <h4>Example:</h4>
-        <p>ul>li.num$@-*3</p>
+        <p>ul>li.num$@-*3 🔽</p>
         <h4>Result:</h4>
 <xmp>
 <ul>
@@ -224,7 +239,7 @@
     <section class="cuadro">
         <h2>Base Numbering 🧱</h2>
         <h4>Example:</h4>
-        <p>ul>li.num$@3*4</p>
+        <p>ul>li.num$@3*4 🧱</p>
         <h4>Result:</h4>
 <xmp>
 <ul>
@@ -239,7 +254,7 @@
     <section class="cuadro">
         <h2>Climb Up ⬆️</h2>
         <h4>Example:</h4>
-        <p>section>article>div^p</p>
+        <p>section>article>div^p ⬆️</p>
         <h4>Result:</h4>
 <xmp>
 <section>
@@ -254,14 +269,14 @@
     <section class="cuadro">
         <h2>Grouping 📦</h2>
         <h4>Example:</h4>
-        <p>(header>nav)(section>article)</p>
+        <p>(header>nav)+(section>article) 📦</p>
         <h4>Result:</h4>
 <xmp>
 <header>
-<nav></nav>
+    <nav></nav>
 </header>
 <section>
-<article></article>
+    <article></article>
 </section>
 </xmp>
     </section>
@@ -269,27 +284,98 @@
     <section class="cuadro">
         <h2>Lorem Ipsum 📄</h2>
         <h4>Example:</h4>
-        <p>lorem</p>
-        <p>lorem20</p>
-        <p>lorem*5</p>
+        <p>lorem 📄</p>
+        <p>lorem20 📄</p>
+        <p>lorem*5 📄</p>
+        <h4>Result:</h4>
+<xmp>
+Lorem ipsum dolor sit amet..
+</xmp>
 
     </section>
 
     <section class="cuadro">
         <h2>HTML Documents 🌐</h2>
         <h4>Example:</h4>
-        <p>html:xs</p>
-        <p>html:xt</p>
-        <p>html:4s</p>
-        <p>html:4t</p>
-        <p>html:5</p>
+        <p>html:xs 🌐</p>
+        <p>html:xt 🌐</p>
+        <p>html:4s 🌐</p>
+        <p>html:4t 🌐</p>
+        <h4>Result:</h4>
+<xmp>
+<html:xs></html:xs>
+<html:xt></html:xt>
+<html:4s></html:4s>
+<html:4t></html:4t>
+</xmp>
 
     </section>
 
     <section class="cuadro">
         <h2>Meta Tags ⚙️</h2>
         <h4>Example:</h4>
-        <p>meta:vp</p>
+        <p>meta:vp ⚙️</p>
+        <h4>Result:</h4>
+<xmp>
+<meta name="viewport" content="width=device-width, initial
+-scale=1.0">
+</xmp>
+    </section>
+
+    <section class="cuadro">
+        <h2>Reto</h2>
+        <h4>Example:</h4>
+        <p>header#header</p>
+        <p>nav.navbar.navbar-inverse</p>
+        <p>div.container</p>
+        <p>div.navbar-header</p>
+        <p>button.navbar-toggle[type="button"]</p>
+        <p>span.sr-only{Toggle navigation}</p>
+        <p>span.icon-bar*3</p>
+        <p>a.navbar-brand[href="index.php"]>img[src="imgs/logo.png" alt=""]</p>
+        <p>div.collapse</p>
+        <p>ul.nav.navbar-nav</p>
+        <p>li>a.link[href="index.html"]{Inicio}</p>
+        <p>li.active.link>a[href="login.html"]{Ingresar}</p>
+        <p>li>a.link[href="registro.html"]{Registrarse}</p>
+        <p>li>a.link[href="contacto.html"]{Contacto}</p>
+        <h4>Result:</h4>
+<xmp>
+<header id="header">
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="index.php" class="navbar-brand">
+                <img src="imgs/logo.png" alt="">
+            </a>
+        </div>
+        <div class="collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="index.html" class="link">Inicio</a>
+                </li>
+                <li class="active link">
+                    <a href="login.html">Ingresar</a>
+                </li>
+                <li>
+                <a href="registro.html" class="link">Registrarse</a>
+                </li>
+                <li>
+                <a href="contacto.html" class="link">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</header>
+</xmp>
+
     </section>
 
 </main>

@@ -5,21 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>01-emmet</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Federant&family=Playwrite+CU+Guides&display=swap');
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&display=swap');
 
-        body {
-            background-color: #000000;
-            background-color: #00bb77;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon fill='%23000' fill-opacity='0.5' points='120 0 120 60 90 30 60 0 0 0 0 0 60 60 0 120 60 120 90 90 120 60 120 0'/%3E%3C/svg%3E");
-            background-size: cover;
-            font-family: "Archivo Black";
-            color: aliceblue;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            body {
+                background-color: #00bb77;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon fill='%23000' fill-opacity='0.5' points='120 0 120 60 90 30 60 0 0 0 0 0 60 60 0 120 60 120 90 90 120 60 120 0'/%3E%3C/svg%3E");
+                background-size: cover;
+                font-family: "Roboto Slab", serif;
+                color: rgb(249, 249, 195);
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
-            a.btn-home {
+                a.btn-home {
                 border: 2px solid white;
                 position: fixed;
                 display: fixed;
@@ -34,33 +33,7 @@
                     opacity: 1;
                 }
             }
-        }
-    </style>
-</head>
-
-<body>
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>01- Emmet</title>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&display=swap');
-
-            body {
-                background-color: #36362E;
-                background-color: #00bb77;
-                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon fill='%23000' fill-opacity='0.5' points='120 0 120 60 90 30 60 0 0 0 0 0 60 60 0 120 60 120 90 90 120 60 120 0'/%3E%3C/svg%3E");
-                background-size: cover;
-                font-family: "Roboto Slab", serif;
-                color: rgb(249, 249, 195);
-                display: flex;
-                justify-content: center;
-                align-items: center;
            
-
             a {
                 position: fixed;
                 left: 20px;
@@ -90,6 +63,14 @@
                 margin: 30px auto;
                 color: white;
             }
+
+            main {
+            text-align: center;
+
+            .cuadro {
+            text-align: left;
+            }  
+        }
     }
         </style>
     </head>
@@ -109,28 +90,208 @@
             <section class="cuadro">
                 <h2>Nesting ⬇️</h2>
                 <h4>Example:</h4>
-                <p>ul>li>a 🔂</p>
+                <p>ul>li>a</p>
                 <h4>Result:</h4>
-<xmp>
-    <ul>
-        <li><a href=""></a></li>
-    </ul>
-</xmp>
-            </section>
-             <section class="cuadro">
-                <h2>Nesting ⬇️</h2>
-                <h4>Example:</h4>
-                <p>ul>li>a 🔂</p>
-                <h4>Result:</h4>
-<xmp>
-    <ul>
-        <li><a href=""></a></li>
-    </ul>
-</xmp>
-            </section>
 
-            </section>
-        </main>
-    </body>
+<xmp>
+<ul>
+    <li><a href=""></a></li>
+</ul>
+</xmp>
+    </section>
 
-    </html>
+    <section class="cuadro">
+        <h2>Siblings ➕</h2>
+        <h4>Example:</h4>
+        <p>section+header+nav</p>
+        <h4>Result:</h4>
+
+<xmp>
+<section></section>
+<header></header>
+<nav></nav>
+</xmp>
+    </section>
+
+    <section class="cuadro">
+        <h2>Multiplication 🔁</h2>
+        <h4>Example:</h4>
+        <p>ul>li*3</p>
+        <h4>Result:</h4>
+
+<xmp>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</xmp>
+    </section>
+
+    <section class="cuadro">
+        <h2>Class 🎯</h2>
+        <h4>Example:</h4>
+        <p>div.contenedor</p>
+        <h4>Result:</h4>
+
+<xmp>
+<div class="contenedor"></div>
+</xmp>
+    </section>
+
+    <section class="cuadro">
+        <h2>Multiple classes 🧩</h2>
+        <h4>Example:</h4>
+        <p>div.clase1.clase2.clasen</p>
+        <h4>Result:</h4>
+
+<xmp>
+<div class="clase1 clase2 clasen"></div>
+</xmp>
+    </section>
+
+    <section class="cuadro">
+        <h2>Identifier attribute 🆔</h2>
+        <h4>Example:</h4>
+        <p>nav#menu</p>
+        <h4>Result:</h4>
+<xmp>
+<nav id="menu"></nav>
+</xmp>
+    </section>
+
+    <section class="cuadro">
+        <h2>Add text ✍️</h2>
+        <h4>Example:</h4>
+        <p>div{Lorem Ipsum Dolor}</p>
+        <h4>Result:</h4>
+<xmp>
+<div>Lorem Ipsum Dolor</div>   
+</xmp>
+    <h4>Example:</h4>
+    <p>a{Click Aqui}</p>
+    <h4>Result:</h4>
+<xmp>
+<a href="">Click Aqui</a>
+</xmp>
+    </section>
+
+    <section class="cuadro">
+        <h2>Customize attributes 🔧</h2>
+        <h4>Example:</h4>
+        <p>a[href=www.google.com]</p>
+        <h4>Result:</h4>
+<xmp>
+<a href="www.google.com"></a>
+</xmp>
+    </section>
+
+    <section class="cuadro">
+        <h2>Consecutive numbers 🔢</h2>
+        <h4>Example:</h4>
+        <p>ul>li.num$*3</p>
+        <p>section>article.sec$$$*3</p>
+        <h4>Result:</h4>
+<xmp>
+<ul>
+    <li class="num1"></li>
+    <li class="num2"></li>
+    <li class="num3"></li>
+</ul>
+
+<section>
+    <article class="sec001"></article>
+    <article class="sec002"></article>
+    <article class="sec003"></article>
+</section>
+</xmp>
+    </section>
+
+    <section class="cuadro">
+        <h2>Reverse Numbering 🔽</h2>
+        <h4>Example:</h4>
+        <p>ul>li.num$@-*3</p>
+        <h4>Result:</h4>
+<xmp>
+<ul>
+    <li class="num3"></li>
+    <li class="num2"></li>
+    <li class="num1"></li>
+</ul>
+</xmp>
+    </section>
+
+    <section class="cuadro">
+        <h2>Base Numbering 🧱</h2>
+        <h4>Example:</h4>
+        <p>ul>li.num$@3*4</p>
+        <h4>Result:</h4>
+<xmp>
+<ul>
+    <li class="num3"></li>
+    <li class="num4"></li>
+    <li class="num5"></li>
+    <li class="num6"></li>
+</ul>
+</xmp>
+    </section>
+
+    <section class="cuadro">
+        <h2>Climb Up ⬆️</h2>
+        <h4>Example:</h4>
+        <p>section>article>div^p</p>
+        <h4>Result:</h4>
+<xmp>
+<section>
+    <article>
+        <div></div>
+    </article>
+    <p></p>
+</section>
+</xmp>
+    </section>
+
+    <section class="cuadro">
+        <h2>Grouping 📦</h2>
+        <h4>Example:</h4>
+        <p>(header>nav)(section>article)</p>
+        <h4>Result:</h4>
+<xmp>
+<header>
+<nav></nav>
+</header>
+<section>
+<article></article>
+</section>
+</xmp>
+    </section>
+
+    <section class="cuadro">
+        <h2>Lorem Ipsum 📄</h2>
+        <h4>Example:</h4>
+        <p>lorem</p>
+        <p>lorem20</p>
+        <p>lorem*5</p>
+
+    </section>
+
+    <section class="cuadro">
+        <h2>HTML Documents 🌐</h2>
+        <h4>Example:</h4>
+        <p>html:xs</p>
+        <p>html:xt</p>
+        <p>html:4s</p>
+        <p>html:4t</p>
+        <p>html:5</p>
+
+    </section>
+
+    <section class="cuadro">
+        <h2>Meta Tags ⚙️</h2>
+        <h4>Example:</h4>
+        <p>meta:vp</p>
+    </section>
+
+</main>
+</body>
+</html>

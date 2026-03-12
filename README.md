@@ -15,7 +15,7 @@
 |03  | Css        |Look & Fell - Cascading Style Sheets  |
 |04  | Javascript |Behavior - Programing Language        |
 
-![CAYA](https://adso3314566-two.vercel.app/public/imgs/soyyo.png)
+![CAYA](https://adso3314566-two.vercel.app/imgs/soyyo.png)
 
 [ADSO Files DRIVE](https://tinyurl.com/wnkk334u)
 

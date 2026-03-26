@@ -82,6 +82,41 @@
                 border-radius: 0.2rem;
                 min-width: 380px;
                 padding: 1rem;
+            }
+
+            #nav {
+                a {
+                    color: #00bfff; /* Bright blue for visibility */
+                    text-decoration: none;
+                }
+                a:hover {
+                    color: #0099ff; /* Slightly darker on hover */
+                }
+            }
+
+            nav {
+                a {
+                    color: #200df0; /* Lighter blue for visibility */
+                    text-decoration: none;
+                }
+                a:hover {
+                    color: #87ceeb; /* Slightly darker on hover */
+                }
+            }
+
+            section.centered {
+                text-align: center;
+            }
+
+            table {
+                margin: 0 auto;
+                border-collapse: collapse;
+            }
+
+            table th,
+            table td {
+                padding: 0.35rem 0.6rem;
+                text-align: center;
                 h3 {
                     border-bottom: 2px dotted #fff;
                     margin: 0;
@@ -89,6 +124,11 @@
                 p {
                     color: #fff9;
                 }
+                
+            }
+
+            form {
+                text-align: center;
             }
         }
         menu {

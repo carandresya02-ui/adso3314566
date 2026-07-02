@@ -31,6 +31,7 @@
         header h1 {
             text-align: center;
             font-size: 3rem;
+            color: #f83232;
         }
 
         .galeria-superior {
@@ -56,7 +57,7 @@
         }
 
         .mini-card img:hover {
-            transform: scale(1.05);
+            transform: scale(1.06);
         }
 
         .equipo-card-horizontal {
@@ -74,7 +75,7 @@
 
         .equipo-card-horizontal img {
             width: 100%;
-            aspect-ratio: 16 / 11; /* Mantiene la foto del detalle proporcional */
+            aspect-ratio: 16 / 11;
             object-fit: cover;
             border-radius: 12px;
         }
@@ -84,6 +85,10 @@
             body {
                 background: url(imgs/fondo_mundial_tablet.jpeg) no-repeat center fixed;
                 background-size: cover;
+            }
+
+            header h1 {
+                color: white
             }
 
             .galeria-superior {
@@ -99,6 +104,11 @@
                 background-size: cover;
             }
 
+            header h1 {
+                font-size: 2rem;
+                color: black;
+            }
+
             .galeria-superior {
                 grid-template-columns: 1fr;
             }
@@ -106,11 +116,6 @@
             .equipo-card-horizontal {
                 flex-direction: column;
                 text-align: center;
-            }
-
-            .equipo-card-horizontal .foto-contenedor {
-                flex: 0 0 100%;
-                width: 100%;
             }
         }
     </style>

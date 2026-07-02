@@ -10,6 +10,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Federant&family=Lobster&family=Playwrite+CU+Guides&family=Roboto:ital,wdth,wght@0,99.7,300;1,99.7,300&display=swap');
 
         * {
+            box-sizing: border-box;
             transition: all 0.5s ease-in;
         }
 
@@ -21,45 +22,61 @@
             margin: 0;
         }
 
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
         header h1 {
-            margin-bottom: 4rem;
             text-align: center;
             font-size: 3rem;
         }
 
-        header h1 span {
-            display: none;
-        }
-
-        .equipos-container {
+        .galeria-superior {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
+            margin-bottom: 4rem;
         }
 
-        .equipo-card {
+        .mini-card {
             background: rgba(0, 0, 0, 0.8);
-            border-radius: 20px;
-            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 1rem;
             text-align: center;
         }
 
-        .equipo-card img {
+        .mini-card img {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 12px;
+            aspect-ratio: 16 / 10; 
+            border-radius: 10px;
             cursor: pointer;
         }
 
-        img:hover {
-            transform: scale(1.07);
+        .mini-card img:hover {
+            transform: scale(1.05);
         }
 
-        .equipo-card .info {
-            line-height: 1.4;
-            opacity: 0.9;
-            text-align: left;
+        .equipo-card-horizontal {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .equipo-card-horizontal .foto-contenedor {
+            flex: 0 0 30%;
+        }
+
+        .equipo-card-horizontal img {
+            width: 100%;
+            aspect-ratio: 16 / 11; /* Mantiene la foto del detalle proporcional */
+            object-fit: cover;
+            border-radius: 12px;
         }
 
         /* Para tablets (1024px o menos) */
@@ -69,7 +86,7 @@
                 background-size: cover;
             }
 
-            .equipos-container {
+            .galeria-superior {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 1.5rem;
             }
@@ -82,13 +99,18 @@
                 background-size: cover;
             }
 
-            header h1 {
-                font-size: 1.8rem;
+            .galeria-superior {
+                grid-template-columns: 1fr;
             }
 
-            .equipos-container {
-                grid-template-columns: 1fr;
-                gap: 1rem;
+            .equipo-card-horizontal {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .equipo-card-horizontal .foto-contenedor {
+                flex: 0 0 100%;
+                width: 100%;
             }
         }
     </style>
@@ -100,60 +122,62 @@
             <h1>39 - FIFA WORLD CUP 2026</h1>
         </header>
 
-        <section class="equipos-container">
+        <!-- 1. ACCESOS DE ARRIBA -->
+        <section class="galeria-superior">
+            <div class="mini-card">
+                <img src="imgs/Francia.jpeg" alt="Francia">
+                <h3>FRANCIA</h3>
+            </div>
+            <div class="mini-card">
+                <img src="imgs/Marruecos.jpeg" alt="Marruecos">
+                <h3>MARRUECOS</h3>
+            </div>
+            <div class="mini-card">
+                <img src="imgs/Inglaterra.jpeg" alt="Inglaterra">
+                <h3>INGLATERRA</h3>
+            </div>
+            <div class="mini-card">
+                <img src="imgs/Colombia.jpeg" alt="Colombia">
+                <h3>COLOMBIA</h3>
+            </div>
+        </section>
 
             <!-- FRANCIA -->
-            <article class="equipo-card">
-                <img src="imgs/Francia.jpeg" alt="Francia">
-                <h2>FRANCIA</h2>
-                <div class="info">
-                    <p> La selección de Francia ganó la Copa del Mundo en 1998 y 2018, consolidándose
-                        como una de las potencias del fútbol mundial. También ha ganado la Eurocopa en
-                        1984 y 2000. En el Mundial de 2022 logró llegar hasta la final. El jugador más
-                        importante hoy por hoy es Kylian Mbappé, nacido en Bondy, Francia. Actualmente
-                        juega en el Real Madrid de España y es una de las grandes estrellas del fútbol
-                        mundial y de su selección. </p>
+            <article class="equipo-card-horizontal">
+                <div class="foto-contenedor">
+                    <img src="imgs/Francia.jpeg" alt="Francia">
+                </div>
+                <div class="contenido-info">
+                    <h2>FRANCIA</h2>
+                    <div class="info">
+                        <p>La selección de Francia ganó la Copa del Mundo en 1998 y 2018, consolidándose como una de las potencias del fútbol mundial. También ha ganado la Eurocopa en 1984 y 2000. En el Mundial de 2022 logró llegar hasta la final. El jugador más importante hoy por hoy es Kylian Mbappé, nacido en Bondy, Francia. Actualmente juega en el Real Madrid de España y es una de las grandes estrellas del fútbol mundial y de su selección.</p>
+                    </div>
                 </div>
             </article>
 
             <!-- MARRUECOS -->
-            <article class="equipo-card">
-                <img src="imgs/Marruecos.jpeg" alt="Marruecos">
-                <h2>MARRUECOS</h2>
-                <div class="info">
-                    <p> La selección de Marruecos alcanzó las semifinales del Mundial de 2022,
-                        convirtiéndose en la primera selección africana en lograr este hito. Su mayor título
-                        es la Copa Africana de Naciones conseguida en 1976. El jugador más importante hoy
-                        por hoy es Achraf Hakimi, nacido en Madrid, España, de padres marroquíes. Actualmente
-                        juega en el Paris Saint-Germain de Francia y es uno de los jugadores más destacados de
-                        la selección. </p>
+            <article class="equipo-card-horizontal">
+                <div class="foto-contenedor">
+                    <img src="imgs/Marruecos.jpeg" alt="Marruecos">
                 </div>
-            </article>
-
-            <!-- INGLATERRA -->
-            <article class="equipo-card">
-                <img src="imgs/Inglaterra.jpeg" alt="Inglaterra">
-                <h2>INGLATERRA</h2>
-                <div class="info">
-                    <p> La selección de Inglaterra ganó la Copa del Mundo en el año 1966, siendo este su
-                        mayor logro en la historia. Ha sido una selección competitiva en distintos torneos
-                        internacionales, llegando a semifinales en el Mundial de 2018 y a la final de la
-                        Eurocopa en 2021. El jugador más importante hoy por hoy es Harry Kane, nacido en
-                        Londres, Inglaterra. Actualmente juega en el Bayern Múnich de Alemania y es uno de
-                        los máximos referentes y goleadores de la selección. </p>
+                <div class="contenido-info">
+                    <h2>MARRUECOS</h2>
+                    <div class="info">
+                        <p>La selección de Marruecos alcanzó las semifinales del Mundial de 2022, convirtiéndose en la primera selección africana en lograr este hito. Su mayor título es la Copa Africana de Naciones conseguida en 1976. El jugador más importante hoy por hoy es Achraf Hakimi, nacido en Madrid, España, de padres marroquíes. Actualmente juega en el Paris Saint-Germain de Francia y es uno de los jugadores más destacados de la selección.</p>
+                    </div>
                 </div>
             </article>
 
             <!-- COLOMBIA -->
-            <article class="equipo-card">
-                <img src="imgs/Colombia.jpeg" alt="Colombia">
-                <h2>COLOMBIA</h2>
-                <div class="info">
-                    <p> La selección Colombia llegó a los cuartos de final del mundial del 2014.
-                        Como título más importante, está su Copa América conseguida en el año 2001.
-                        El jugador más importante hoy por hoy es Luis Fernando Díaz, nacido en Barrancas,
-                        La Guajira, Colombia. Actualmente juega en el Bayern Munich de Alemania y es uno de los
-                        jugadores más importantes de la selección. </p>
+            <article class="equipo-card-horizontal">
+                <div class="foto-contenedor">
+                    <img src="imgs/Colombia.jpeg" alt="Colombia">
+                </div>
+                <div class="contenido-info">
+                    <h2>COLOMBIA</h2>
+                    <div class="info">
+                        <p>La selección Colombia llegó a los cuartos de final del mundial del 2014. Como título más importante, está su Copa América conseguida en el año 2001. El jugador más importante hoy por hoy es Luis Fernando Díaz, nacido en Barrancas, La Guajira, Colombia. Actualmente juega en el Liverpool de Inglaterra y es uno de los jugadores más importantes de la selección.</p>
+                    </div>
                 </div>
             </article>
 

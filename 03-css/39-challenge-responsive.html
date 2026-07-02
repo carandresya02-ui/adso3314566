@@ -1,21 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>38-Media Queries</title>
+    <title>38-Media Queries - Mundial 2026</title>
     <style>
-        
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Federant&family=Lobster&family=Playwrite+CU+Guides&family=Roboto:ital,wdth,wght@0,99.7,300;1,99.7,300&display=swap');
+
+        * {
+            transition: all 0.5s ease-in;
+        }
+
+        body {
+            font-family: sans-serif;
+            background: url(imgs/FIFA_World_Cup_2026.jpg) no-repeat center center fixed;
+            color: #fff;
+            margin: 0;
+        }
+
+        header h1 {
+            margin-bottom: 4rem;
+            text-align: center;
+            font-size: 3rem;
+        }
+
+        header h1 span {
+            display: none;
+        }
+
+        .equipos-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* 4 columnas en desktop */
+            gap: 1.5rem;
+        }
+
+        .equipo-card {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .equipo-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .equipo-card .info {
+            line-height: 1.4;
+            opacity: 0.9;
+            text-align: left;
+        }
+
+        /* Tablets (1024px o menos) */
+        @media (max-width: 1024px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .equipos-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        /* Móviles (728px o menos) */
+        @media (max-width: 728px) {
+            body {
+                background: url(imgs/FIFA_World_Cup_2026.jpg) no-repeat center center fixed;
+                /* Fondo más oscuro para móvil */
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .equipos-container {
+                grid-template-columns: 1fr;
+                /* 1 columna en móvil */
+                gap: 1rem;
+            }
+
+            .equipo-card {
+                padding: 1rem;
+            }
+        }
     </style>
 </head>
+
 <body>
     <main>
         <header>
-            
+            <div class="logo-mundial"></div>
+            <h1>
+                FIFA WORLD CUP 2026
+                <span class="lg">💻 Desktop</span>
+                <span class="md">📲 Tablet</span>
+                <span class="sm">📱 Mobile</span>
+            </h1>
         </header>
-        <section>
-            
+
+        <!-- CONTENEDOR DE LOS 4 EQUIPOS -->
+        <section class="equipos-container">
+
+            <!-- EQUIPO 1: FRANCIA -->
+            <article class="equipo-card">
+                <span class="bandera"></span>
+                <img src="imgs/Francia.jpeg" alt="Francia" class="seleccion">
+                <h2>FRANCIA</h2>
+                <div class="info">
+                    <p> La selección de Francia ganó la Copa del Mundo en 1998 y 2018, consolidándose
+                        como una de las potencias del fútbol mundial. También ha ganado la Eurocopa en
+                        1984 y 2000. En el Mundial de 2022 logró llegar hasta la final. El jugador más
+                        importante hoy por hoy es Kylian Mbappé, nacido en Bondy, Francia. Actualmente
+                        juega en el Real Madrid de España y es una de las grandes estrellas del fútbol
+                        mundial y de su selección. </p>
+                </div>
+            </article>
+
+            <!-- EQUIPO 2: MARRUECOS -->
+            <article class="equipo-card">
+                <span class="bandera"></span>
+                <img src="imgs/Marruecos.jpeg" alt="Marruecos" class="seleccion">
+                <h2>MARRUECOS</h2>
+                <div class="info">
+                    <p> La selección de Marruecos alcanzó las semifinales del Mundial de 2022,
+                        convirtiéndose en la primera selección africana en lograr este hito. Su mayor título
+                        es la Copa Africana de Naciones conseguida en 1976. El jugador más importante hoy
+                        por hoy es Achraf Hakimi, nacido en Madrid, España, de padres marroquíes. Actualmente
+                        juega en el Paris Saint-Germain de Francia y es uno de los jugadores más destacados de
+                        la selección. </p>
+                </div>
+            </article>
+
+            <!-- INGLATERRA -->
+            <article class="equipo-card">
+                <span class="bandera"></span>
+                <img src="imgs/Inglaterra.jpeg" alt="Inglaterra" class="seleccion">
+                <h2>INGLATERRA</h2>
+                <div class="info">
+                    <p> La selección de Inglaterra ganó la Copa del Mundo en el año 1966, siendo este su
+                        mayor logro en la historia. Ha sido una selección competitiva en distintos torneos
+                        internacionales, llegando a semifinales en el Mundial de 2018 y a la final de la
+                        Eurocopa en 2021. El jugador más importante hoy por hoy es Harry Kane, nacido en
+                        Londres, Inglaterra. Actualmente juega en el Bayern Múnich de Alemania y es uno de
+                        los máximos referentes y goleadores de la selección. </p>
+                </div>
+            </article>
+
+            <!-- COLOMBIA -->
+            <article class="equipo-card">
+                <span class="bandera"></span>
+                <img src="imgs/Colombia.jpeg" alt="Colombia" class="seleccion">
+                <h2>COLOMBIA</h2>
+                <div class="info">
+                    <p> La selección Colombia llegó a los cuartos de final del mundial del 2014.
+                        Como título más importante, está su Copa América conseguida en el año 2001.
+                        El jugador más importante hoy por hoy es Luis Fernando Díaz, nacido en Barrancas,
+                        La Guajira, Colombia. Actualmente juega en el Bayern Munich de Alemania y es uno de los
+                        jugadores más importantes de la selección. </p>
+                </div>
+            </article>
+
         </section>
     </main>
 </body>
+
 </html>

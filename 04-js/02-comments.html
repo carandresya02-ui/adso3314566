@@ -34,9 +34,9 @@
 
         // This is a interval time
         setInterval(function() {
-            let today    = new Date; // New Date
-            let hours    = today.getHours(); // Get Hours
-            let minutes   = today.getMinutes(); // Get Minutes
+            let today    = new Date;           // New Date
+            let hours    = today.getHours();   // Get Hours
+            let minutes  = today.getMinutes(); // Get Minutes
             let seconds  = today.getSeconds(); // Get seconds
             // Show time
             time.textContent = `${hours.toString().padStart(2, '00')}:${minutes.toString().padStart(2, '00')}:${seconds.toString().padStart(2, '00')}`;

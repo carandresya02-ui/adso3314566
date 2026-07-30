@@ -3,5 +3,10 @@
     "github.copilot.chat.additionalReadAccessPaths": [
         ""
     ],
-    "cmake.options.statusBarVisibility": "visible"
+    "cmake.options.statusBarVisibility": "visible",
+    "editor.suggest.snippetsPreventQuickSuggestions": true,
+    "emmet.useInlineCompletions": true,
+    "terminal.integrated.commandsToSkipShell": [
+        ""
+    ]
 }

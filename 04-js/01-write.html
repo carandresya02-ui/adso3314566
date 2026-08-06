@@ -16,16 +16,18 @@
             <h2>Learn to write and execute basic JavaScript code.</h2>
         </header>
         <section>
-            <script>
-                document.write('<h3>Welcome to JS</h3>')
-            </script>
-            <p id="message"></p>
+            <div class="recuadro">
+                <script>
+                    document.write('<h3>Welcome to JS</h3>')
+                </script>
+                <p id="message"></p>
+            </div>
         </section>
     </main>
 
     <script>
         const message = document.getElementById('message');
-        const string = 'Amazing';
+        const string = 'Amazing 💛';
         message.innerHTML = "<strong> We love </strong>";
         message.innerText += ' Javascript ';
         message.textContent += ` is ${string} `;

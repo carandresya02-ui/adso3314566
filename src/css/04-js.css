@@ -115,6 +115,27 @@ body {
     }
 }
 
+section ul li,
+section ol li,
+section menu li,
+section dl dd {
+    margin: 15px 0;
+    padding: 8px 15px;
+    background: rgba(0, 0, 0, 0.836);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.recuadro {
+    background: rgba(3, 3, 0, 0.5);
+    font-size: 1rem;
+    border-radius: 16px;
+    font-family: sans-serif;
+    padding: 20px;
+}
+
 div.menus {
     display: flex;
     align-items: start;

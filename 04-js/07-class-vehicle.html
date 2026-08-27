@@ -5,6 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>07-class-vehicle</title>
     <link rel="stylesheet" href="../src/css/04-js.css">
+    <style>
+        div.vehicle {
+            &.dark {
+                background-color: #13171A;
+                header {
+                    button.mode {
+                        background: url(imgs/vehicle/mode-light.svg) no-repeat center /cover;
+                    }
+                }
+                nav {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-top: 20px;
+
+                    figure.brand {
+                        background: url(imgs/vehicle/brand.svg) no-repeat center /contain;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 60px;
+                        width: 200px;
+                    }
+
+                    button {
+                        border: none;
+                        cursor: pointer;
+                        height: 60px;
+                        transition: transform 0.4s ease-in;
+                        width: 60px;
+                        &.prev {
+                            background: url(imgs/vehicle/prev.svg) no-repeat center;
+                            &.hover {
+                                transform: translateX(-10px);
+                            }
+                        }
+                        &.next {
+                            background: url(imgs/vehicle/next.svg) no-repeat center;
+                            transform: translateX(8px);
+                        }
+                    }
+                }
+            }
+            background-color: #fbfcfc;
+            border-radius: 8px;
+            margin: 0 auto;
+            height: 576px; /* 576+24=600 */
+            padding: 12px;
+            width: 356px; /* 356+24=380 */
+            header {
+                align-items: center;
+                display: flex;
+                justify-content: space-between;
+                figure {
+                    background: url(imgs/vehicle/logo.png) no-repeat center /cover;
+                    height: 80px;
+                    margin: 0;
+                    width: 220px;
+                }
+                button.mode {
+                    background: url(imgs/vehicle/mode-light.svg) no-repeat center;
+                    border: none;
+                    cursor: pointer;
+                    height: 70px;
+                    transition: transform 0.4s ease-in;
+                    width: 100px;
+                    &.hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    </style>
 </head>
 <body>
     <a class="btn-home" href="index.html">
@@ -16,12 +89,38 @@
         </header>
         <section>
             <div class="recuadro">
-                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/design/pMp5KLlYdakjPs2lvlf0kD/JS-Class-Vehicle?node-id=0-1&embed-host=share" allowfullscreen></iframe>
+                <!-- <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/design/pMp5KLlYdakjPs2lvlf0kD/JS-Class-Vehicle?node-id=0-1&embed-host=share" allowfullscreen></iframe> -->
+
+                <div class="vehicle">
+                    <header>
+                        <figure class="logo"></figure>
+                        <button class="mode"></button>
+                    </header>
+                    <nav>
+                        <button class="prev"></button>
+                        <figure class="brand">Arizona</figure>
+                        <button class="next"></button>
+                    </nav>
+                </div>
             </div>
         </section>
     </main>
     <script>
-        
+        // Elements
+        const vhc  = document.querySelector('.vehicle');
+        const mode = document.querySelector('.mode');
+
+        // Detect dark mode
+        const darkMode = window.matchMedia('(prefers-color-sheme: dark)');
+        const updateTheme = (e) => vjc.classList.toggle('dark', e.matches);
+        updateTheme(darkMode);
+
+        // Events
+        darkMode.addEventListener('change', updateTheme);
+        mode.addEventListener('click', function() {
+            vhc.classList.toggle('dark');
+        });
+
     </script>
 </body>
 </html>

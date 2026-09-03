@@ -9,9 +9,11 @@
         div.vehicle {
             &.dark {
                 background-color: #13171A;
+                width: 399px;
                 header {
                     button.mode {
-                        background: url(imgs/vehicle/mode-light.svg) no-repeat center /cover;
+                        background: url(imgs/vehicle/mode-dark.svg) no-repeat center /cover;
+                        width: 105px;
                     }
                 }
                 nav {
@@ -43,7 +45,7 @@
                         }
                         &.next {
                             background: url(imgs/vehicle/next.svg) no-repeat center;
-                            transform: translateX(8px);
+                            transform: translateX(2.5px);
                         }
                     }
                 }
@@ -98,7 +100,7 @@
                     </header>
                     <nav>
                         <button class="prev"></button>
-                        <figure class="brand">Arizona</figure>
+                        <figure class="brand">Enduro</figure>
                         <button class="next"></button>
                     </nav>
                 </div>
@@ -111,8 +113,8 @@
         const mode = document.querySelector('.mode');
 
         // Detect dark mode
-        const darkMode = window.matchMedia('(prefers-color-sheme: dark)');
-        const updateTheme = (e) => vjc.classList.toggle('dark', e.matches);
+        const darkMode = window.matchMedia('(prefers-color-scheme: dark)');
+        const updateTheme = (e) => vhc.classList.toggle('dark', e.matches);
         updateTheme(darkMode);
 
         // Events

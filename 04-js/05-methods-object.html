@@ -142,18 +142,17 @@
             },
 
             attack: function() {
-                if(this.hp > 0) {
+                if(this.hp > 25) {
                     this.hp -= 25;
-
-                    // If life is 0, the status changes.
-                    if(this.hp <= 0) {
-                        this.hp = 0;
-                        this.status = 'dead';
-                    } else {
-                        this.status = 'attack';
-                    }
-
+                    this.status = 'attack';
+                    pkImage.classList.remove('alive', 'feed', 'dead');
                     this.updateHp('animate__rubberBand');
+                    this.updateStatus();
+                } else {
+                    this.hp = 0;
+                    this.status = 'dead';
+                    pkImage.classList.remove('alive', 'feed', 'attack');
+                    this.updateHp('animate__shakeX');
                     this.updateStatus();
                 }
             },

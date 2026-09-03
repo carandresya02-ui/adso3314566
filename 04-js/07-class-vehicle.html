@@ -9,9 +9,11 @@
         div.vehicle {
             &.dark {
                 background-color: #13171A;
-                width: 399px;
                 header {
                     button.mode {
+                        &:hover {
+                            transform: scale(1.1);
+                        }
                         background: url(imgs/vehicle/mode-dark.svg) no-repeat center /cover;
                         width: 105px;
                     }
@@ -23,11 +25,11 @@
                     margin-top: 20px;
 
                     figure.brand {
-                        background: url(imgs/vehicle/brand.svg) no-repeat center /contain;
+                        background: url(imgs/vehicle/brand_dark.svg) no-repeat center /contain;
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        height: 60px;
+                        height: 30px;
                         width: 200px;
                     }
 
@@ -36,16 +38,49 @@
                         cursor: pointer;
                         height: 60px;
                         transition: transform 0.4s ease-in;
-                        width: 60px;
+                        width: 80px;
+
                         &.prev {
-                            background: url(imgs/vehicle/prev.svg) no-repeat center;
-                            &.hover {
-                                transform: translateX(-10px);
+                            background: url(imgs/vehicle/prev_dark.svg) no-repeat center;
+                            &:hover {
+                                transform: scale(1.2);
                             }
                         }
                         &.next {
-                            background: url(imgs/vehicle/next.svg) no-repeat center;
-                            transform: translateX(2.5px);
+                            background: url(imgs/vehicle/next_dark.svg) no-repeat center;
+                            &:hover {
+                                cursor: pointer;
+                                transform: scale(1.2);
+                            }
+                        }
+                    }
+                }
+                div {
+                    align-items: center;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 20px;
+
+                    figure {
+                        margin: 0;
+                        padding: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: end;
+                        padding-bottom: 10px;
+                        height: 90px; /*80px+10px=90px*/
+                        width: 110px;
+
+                        &.model {
+                            background: url(imgs/vehicle/model_dark.svg) no-repeat center;
+                        }
+
+                        &.reference {
+                            background: url(imgs/vehicle/reference_dark.svg) no-repeat center;
+                        }
+
+                        &.color {
+                            background: url(imgs/vehicle/color_dark.svg) no-repeat center;
                         }
                     }
                 }
@@ -56,16 +91,18 @@
             height: 576px; /* 576+24=600 */
             padding: 12px;
             width: 356px; /* 356+24=380 */
+
             header {
                 align-items: center;
                 display: flex;
                 justify-content: space-between;
                 figure {
-                    background: url(imgs/vehicle/logo.png) no-repeat center /cover;
+                    background: url(imgs/vehicle/logo_dark.png) no-repeat center /cover;
                     height: 80px;
                     margin: 0;
                     width: 220px;
                 }
+                
                 button.mode {
                     background: url(imgs/vehicle/mode-light.svg) no-repeat center;
                     border: none;
@@ -77,6 +114,36 @@
                         transform: scale(1.1);
                     }
                 }
+            }
+            div {
+                align-items: center;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 20px;
+                figure {
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: end;
+                    padding-bottom: 10px;
+                    height: 90px; /*80px+10px=90px*/
+                    width: 110px;
+                    &.model {
+                        background: url(imgs/vehicle/model.svg) no-repeat center;
+                    }
+                    &.reference {
+                        background: url(imgs/vehicle/reference.svg) no-repeat center;
+                    }
+                    &.color {
+                        background: url(imgs/vehicle/color.svg) no-repeat center;
+                    }
+                }
+            }
+            
+            figure.landscape {
+                background: url(imgs/vehicle/landscape.png) no-repeat center /cover;
+                margin: 0;
             }
         }
     </style>
@@ -100,17 +167,91 @@
                     </header>
                     <nav>
                         <button class="prev"></button>
-                        <figure class="brand">Enduro</figure>
+                        <figure class="brand"></figure>
                         <button class="next"></button>
                     </nav>
+                    <div>
+                        <figure class="model"></figure>
+                        <figure class="reference"></figure>
+                        <figure class="color"></figure>
+                    </div>
+                    <figure class="landscape">
+
+                    </figure>
                 </div>
             </div>
         </section>
     </main>
     <script>
+
         // Elements
         const vhc  = document.querySelector('.vehicle');
         const mode = document.querySelector('.mode');
+
+        // Labels (Attributes)
+
+        const lbrand = document.querySelector('.brand');
+        const lmodel = document.querySelector('.model');
+        const lrefer = document.querySelector('.reference');
+        const lcolor = document.querySelector('.color');
+
+        // Buttons
+        const bnext = document.querySelector('.next');
+        const bprev = document.querySelector('.prev');
+
+        // Variables
+        let index = 0;
+
+        // Object
+        const vehicles = {
+            attrs: [
+                { brand: 'Suzuki',    refer: 'DR 150',  model: '2024', color: 'White',      image: 'images/vehicle/car01.webp' },
+                { brand: 'Honda',     refer: 'XR650L',  model: '2024', color: 'Red',        image: 'images/vehicle/car02.webp' },
+                { brand: 'KTM',       refer: 'EXC-F',   model: '2025', color: 'Green',      image: 'images/vehicle/car03.webp' },
+                { brand: 'Husqvarna', refer: 'FE 350s', model: '2026', color: 'Light Blue', image: 'images/vehicle/car04.webp' },
+                { brand: 'Yamaha',    refer: 'WR250F',  model: '2026', color: 'Blue',       image: 'images/vehicle/car05.webp' }
+            ]
+        };
+
+        // Class
+        class Vehicle {
+            constructor(brand, refer, model, color, image) {
+                this.brand = brand;
+                this.refer = refer;
+                this.model = model;
+                this.color = color;
+                this.image = image;
+                this.displayData();
+
+                // Botón para bloquear "prev" cuando cargue la página
+                this.disabledButton(bprev);
+            }
+
+            disabledButton(btn) {
+                btn.style.pointerEvents = 'none';
+                btn.style.opacity = 0.2;
+            }
+
+            enabledButton(btn) {
+                btn.style.pointerEvents = 'all';
+                btn.style.opacity = '1';
+            }
+
+            displayData() {
+                lbrand.textContent = this.brand;
+                lmodel.textContent = this.model;
+                lrefer.textContent = this.refer;
+                lcolor.textContent = this.color;
+                //console.table(vehicles.attrs);
+                console.table(vehicles.attrs); /* attrs: Atributos */
+            }
+        }
+
+        moto = new Vehicle( vehicles.attrs[index].brand, 
+                            vehicles.attrs[index].refer, 
+                            vehicles.attrs[index].model, 
+                            vehicles.attrs[index].color, 
+                            vehicles.attrs[index].image );
 
         // Detect dark mode
         const darkMode = window.matchMedia('(prefers-color-scheme: dark)');
@@ -121,6 +262,40 @@
         darkMode.addEventListener('change', updateTheme);
         mode.addEventListener('click', function() {
             vhc.classList.toggle('dark');
+        });
+
+        bnext.addEventListener('click', function() {
+            if (index < (vehicles.attrs.length) - 1) {
+                moto.brand = vehicles.attrs[++index].brand;
+                moto.model = vehicles.attrs[index].model;
+                moto.refer = vehicles.attrs[index].refer;
+                moto.color = vehicles.attrs[index].color;
+                moto.displayData();
+                moto.enabledButton(bprev)
+                
+                if (index == 4) {
+                    moto.disabledButton(bnext);
+                }
+            }
+            // console.log(vehicles.brand)
+            moto.displayData();
+        });
+
+        bprev.addEventListener('click', function() {
+            if (index > 0) {
+                moto.brand = vehicles.attrs[--index].brand;
+                moto.model = vehicles.attrs[index].model;
+                moto.refer = vehicles.attrs[index].refer;
+                moto.color = vehicles.attrs[index].color;
+                moto.displayData();
+                moto.enabledButton(bnext);
+
+                if (index == 0) {
+                    moto.disabledButton(bprev);
+                }
+            }
+            // console.log(vehicles.brand)
+            moto.displayData();
         });
 
     </script>

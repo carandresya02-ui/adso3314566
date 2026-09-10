@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,15 +10,18 @@
         div.vehicle {
             &.dark {
                 background-color: #13171A;
+
                 header {
                     button.mode {
                         &:hover {
                             transform: scale(1.1);
                         }
+
                         background: url(imgs/vehicle/mode-dark.svg) no-repeat center /cover;
                         width: 105px;
                     }
                 }
+
                 nav {
                     display: flex;
                     align-items: center;
@@ -42,12 +46,15 @@
 
                         &.prev {
                             background: url(imgs/vehicle/prev_dark.svg) no-repeat center;
+
                             &:hover {
                                 transform: scale(1.2);
                             }
                         }
+
                         &.next {
                             background: url(imgs/vehicle/next_dark.svg) no-repeat center;
+
                             &:hover {
                                 cursor: pointer;
                                 transform: scale(1.2);
@@ -55,6 +62,7 @@
                         }
                     }
                 }
+
                 div {
                     align-items: center;
                     display: flex;
@@ -68,7 +76,8 @@
                         justify-content: center;
                         align-items: end;
                         padding-bottom: 10px;
-                        height: 90px; /*80px+10px=90px*/
+                        height: 90px;
+                        /*80px+10px=90px*/
                         width: 110px;
 
                         &.model {
@@ -85,24 +94,28 @@
                     }
                 }
             }
+
             background-color: #fbfcfc;
             border-radius: 8px;
             margin: 0 auto;
-            height: 576px; /* 576+24=600 */
+            height: 576px;
+            /* 576+24=600 */
             padding: 12px;
-            width: 356px; /* 356+24=380 */
+            width: 356px;
+            /* 356+24=380 */
 
             header {
                 align-items: center;
                 display: flex;
                 justify-content: space-between;
+
                 figure {
                     background: url(imgs/vehicle/logo_dark.png) no-repeat center /cover;
                     height: 80px;
                     margin: 0;
                     width: 220px;
                 }
-                
+
                 button.mode {
                     background: url(imgs/vehicle/mode-light.svg) no-repeat center;
                     border: none;
@@ -110,16 +123,19 @@
                     height: 70px;
                     transition: transform 0.4s ease-in;
                     width: 100px;
+
                     &.hover {
                         transform: scale(1.1);
                     }
                 }
             }
+
             div {
                 align-items: center;
                 display: flex;
                 justify-content: space-between;
                 margin-top: 20px;
+
                 figure {
                     margin: 0;
                     padding: 0;
@@ -127,30 +143,109 @@
                     justify-content: center;
                     align-items: end;
                     padding-bottom: 10px;
-                    height: 90px; /*80px+10px=90px*/
+                    height: 90px;
+                    /*80px+10px=90px*/
                     width: 110px;
+
                     &.model {
                         background: url(imgs/vehicle/model.svg) no-repeat center;
                     }
+
                     &.reference {
                         background: url(imgs/vehicle/reference.svg) no-repeat center;
                     }
+
                     &.color {
                         background: url(imgs/vehicle/color.svg) no-repeat center;
                     }
                 }
             }
-            
+
             figure.landscape {
                 background: url(imgs/vehicle/landscape.png) no-repeat center /cover;
                 margin: 0;
+                margin-top: 12px;
+                height: 206px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                div.frame {
+                    div.sky {
+                        background: url(imgs/vehicle/sky-night.png) repeat-x 0 bottom /contain;
+                    }
+                    div.mountains {
+                        background: url(imgs/vehicle/mountains-night.png) repeat-x 0 bottom /contain;
+                    }
+                    div.route {
+                        background: url(imgs/vehicle/route-night.png) repeat-x 0 bottom /contain;
+                    }
+                }
+            }
+
+            figure.landscape img.moto {
+                height: 120px;
+                width: auto;
+                transition: all 0.3s ease;
+                border: none !important;
+                border-radius: 0 !important;
+            }
+
+            menu {
+                align-items: center;
+                display: flex;
+                flex-direction: row;
+                margin: 0;
+                margin-top: 12px;
+                padding: 0;
+                justify-content: space-between;
+                width: 356px;
+
+                button {
+                    border: none;
+                    height: 68px;
+                    width: 68px;
+                    transition: transform 0.4s ease-in;
+
+                    &.btn-on {
+                        background: url(imgs/vehicle/btn-on.svg) no-repeat center /contain;
+                    }
+
+                    &.btn-forward {
+                        background: url(imgs/vehicle/btn-forward.svg) no-repeat center /contain;
+                    }
+
+                    &.btn-stop {
+                        background: url(imgs/vehicle/btn-stop.svg) no-repeat center /contain;
+                    }
+
+                    &.btn-backward {
+                        background: url(imgs/vehicle/btn-backward.svg) no-repeat center /contain;
+                    }
+
+                    &.btn-off {
+                        background: url(imgs/vehicle/btn-off.svg) no-repeat center /contain;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                        transform: scale(1.2);
+                    }
+                }
             }
         }
+        
     </style>
 </head>
+
 <body>
     <a class="btn-home" href="index.html">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>    </a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+            <path
+                d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z">
+            </path>
+        </svg> </a>
     <main>
         <header>
             <h1>07 - Class Vehicle</h1>
@@ -175,9 +270,18 @@
                         <figure class="reference"></figure>
                         <figure class="color"></figure>
                     </div>
-                    <figure class="landscape">
 
+                    <figure class="landscape">
+                        <img class="moto" src="" alt="Moto">
                     </figure>
+
+                    <menu>
+                        <button class="btn-on"></button>
+                        <button class="btn-forward"></button>
+                        <button class="btn-stop"></button>
+                        <button class="btn-backward"></button>
+                        <button class="btn-off"></button>
+                    </menu>
                 </div>
             </div>
         </section>
@@ -185,8 +289,9 @@
     <script>
 
         // Elements
-        const vhc  = document.querySelector('.vehicle');
+        const vhc = document.querySelector('.vehicle');
         const mode = document.querySelector('.mode');
+        const layers  = document.querySelectorAll('.layer');
 
         // Labels (Attributes)
 
@@ -194,10 +299,18 @@
         const lmodel = document.querySelector('.model');
         const lrefer = document.querySelector('.reference');
         const lcolor = document.querySelector('.color');
+        const lmoto  = document.querySelector('.moto');
 
         // Buttons
         const bnext = document.querySelector('.next');
         const bprev = document.querySelector('.prev');
+
+        // ---
+        const btnOn   = document.querySelector('.btn-on');
+        const btnForw = document.querySelector('.btn-forward');
+        const btnStop = document.querySelector('.btn-stop');
+        const btnBack = document.querySelector('.btn-backward');
+        const btnOff  = document.querySelector('.btn-off');
 
         // Variables
         let index = 0;
@@ -205,11 +318,11 @@
         // Object
         const vehicles = {
             attrs: [
-                { brand: 'Suzuki',    refer: 'DR 150',  model: '2024', color: 'White',      image: 'images/vehicle/car01.webp' },
-                { brand: 'Honda',     refer: 'XR650L',  model: '2024', color: 'Red',        image: 'images/vehicle/car02.webp' },
-                { brand: 'KTM',       refer: 'EXC-F',   model: '2025', color: 'Green',      image: 'images/vehicle/car03.webp' },
-                { brand: 'Husqvarna', refer: 'FE 350s', model: '2026', color: 'Light Blue', image: 'images/vehicle/car04.webp' },
-                { brand: 'Yamaha',    refer: 'WR250F',  model: '2026', color: 'Blue',       image: 'images/vehicle/car05.webp' }
+                { brand: 'Suzuki',    refer: 'DR 150',  model: '2024', color: 'White',      image: 'imgs/vehicle/moto01.png' },
+                { brand: 'Honda',     refer: 'XR650L',  model: '2024', color: 'Red',        image: 'imgs/vehicle/moto02.png' },
+                { brand: 'KTM',       refer: 'EXC-F',   model: '2025', color: 'Green',      image: 'imgs/vehicle/moto03.png' },
+                { brand: 'Husqvarna', refer: 'FE 350s', model: '2026', color: 'Light Blue', image: 'imgs/vehicle/moto04.png' },
+                { brand: 'Yamaha',    refer: 'WR250F',  model: '2026', color: 'Blue',       image: 'imgs/vehicle/moto05.png' }
             ]
         };
 
@@ -221,6 +334,7 @@
                 this.model = model;
                 this.color = color;
                 this.image = image;
+                this.isOn = false;;
                 this.displayData();
 
                 // Botón para bloquear "prev" cuando cargue la página
@@ -242,16 +356,58 @@
                 lmodel.textContent = this.model;
                 lrefer.textContent = this.refer;
                 lcolor.textContent = this.color;
+                lmoto.setAttribute('src', this.image);
+
                 //console.table(vehicles.attrs);
                 console.table(vehicles.attrs); /* attrs: Atributos */
             }
+
+            powerOn() {
+                if (!this.isOn) {
+                    this.isOn = true
+                    requestAnimationFrame(vibrate);
+                }
+            }
+
+            powerOff() {
+                if (this.isOn) {
+                    this.isOn = false;
+                    requestAnimationFrame(vibrate);
+                    lmoto.style.transform = 'translate(0, 0px)';
+                }
+            }
+
+            forward() {
+                if(this.isOn && this.isPaused) {
+                    this.lastTimestamp = 0;
+                    this.isPaused      = false;
+                    this.isReversed    = false;
+                    requestAnimationFrame(animateParallax);
+                }
+            }
+
+            backward() {
+                if(this.isOn && this.isPaused) {
+                    this.lastTimestamp = 0;
+                    this.isReversed    = true;
+                    this.isPaused      = false;
+                    requestAnimationFrame(animateParallax);
+                }
+            }
+
+            stop() {
+                if(this.isOn && !this.isPaused) {
+                    this.lastTimestamp = 0;
+                    this.isPaused = true;
+                }
+            }
         }
 
-        moto = new Vehicle( vehicles.attrs[index].brand, 
-                            vehicles.attrs[index].refer, 
-                            vehicles.attrs[index].model, 
-                            vehicles.attrs[index].color, 
-                            vehicles.attrs[index].image );
+        moto = new Vehicle(vehicles.attrs[index].brand,
+            vehicles.attrs[index].refer,
+            vehicles.attrs[index].model,
+            vehicles.attrs[index].color,
+            vehicles.attrs[index].image);
 
         // Detect dark mode
         const darkMode = window.matchMedia('(prefers-color-scheme: dark)');
@@ -260,20 +416,21 @@
 
         // Events
         darkMode.addEventListener('change', updateTheme);
-        mode.addEventListener('click', function() {
+        mode.addEventListener('click', function () {
             vhc.classList.toggle('dark');
         });
 
-        bnext.addEventListener('click', function() {
+        bnext.addEventListener('click', function () {
             if (index < (vehicles.attrs.length) - 1) {
                 moto.brand = vehicles.attrs[++index].brand;
                 moto.model = vehicles.attrs[index].model;
                 moto.refer = vehicles.attrs[index].refer;
                 moto.color = vehicles.attrs[index].color;
+                moto.image = vehicles.attrs[index].image;
                 moto.displayData();
                 moto.enabledButton(bprev)
-                
-                if (index == 4) {
+
+                if (index == (vehicles.attrs.length)-1) {
                     moto.disabledButton(bnext);
                 }
             }
@@ -281,12 +438,13 @@
             moto.displayData();
         });
 
-        bprev.addEventListener('click', function() {
+        bprev.addEventListener('click', function () {
             if (index > 0) {
                 moto.brand = vehicles.attrs[--index].brand;
                 moto.model = vehicles.attrs[index].model;
                 moto.refer = vehicles.attrs[index].refer;
                 moto.color = vehicles.attrs[index].color;
+                moto.image = vehicles.attrs[index].image
                 moto.displayData();
                 moto.enabledButton(bnext);
 
@@ -298,6 +456,54 @@
             moto.displayData();
         });
 
+        btnOn.addEventListener('click', function () {
+            moto.powerOn();
+        });
+
+        btnForw.addEventListener('click', function () {
+            moto.forward();
+        });
+
+        btnStop.addEventListener('click', function () {
+            moto.stop();
+        });
+
+        btnBack.addEventListener('click', function () {
+            moto.backward();
+        });
+
+        btnOff.addEventListener('click', function () {
+            moto.powerOff();
+        });
+
+        function vibrate() {
+            if (!moto.isOn) return;
+            lmoto.style.transform = `translate(0, ${1 * Math.sin(Date.now() / 25)}px)`
+            requestAnimationFrame(vibrate);
+        }
+
+        // Function Animate Parallax
+        const speedFactors  = [0.04, 0.08, 0.25]
+        layers.forEach(layer => {
+            layer.dataset.pos = '0'
+        })
+
+        function animateParallax(timestamp) {
+            if (!car.isPaused) {
+                const delta   = timestamp - (car.lastTimestamp || timestamp)
+                car.lastTimestamp = timestamp
+
+                layers.forEach((layer, index) => {
+                let currentPos = (parseFloat(layer.dataset.pos) || 0) 
+                                 + speedFactors[index] 
+                                 * (car.isReversed ? delta : -delta)
+                layer.style.backgroundPositionX = `${currentPos}px`
+                layer.dataset.pos = currentPos
+                })
+            }
+            requestAnimationFrame(animateParallax)
+        }
     </script>
 </body>
+
 </html>

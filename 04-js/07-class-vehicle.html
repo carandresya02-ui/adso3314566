@@ -8,124 +8,79 @@
     <link rel="stylesheet" href="../src/css/04-js.css">
     <style>
         div.vehicle {
-            &.dark {
-                background-color: #13171A;
-
-                header {
-                    button.mode {
-                        &:hover {
-                            transform: scale(1.1);
-                        }
-
-                        background: url(imgs/vehicle/mode-dark.svg) no-repeat center /cover;
-                        width: 105px;
-                    }
-                }
-
-                nav {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin-top: 20px;
-
-                    figure.brand {
-                        background: url(imgs/vehicle/brand_dark.svg) no-repeat center /contain;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        height: 30px;
-                        width: 200px;
-                    }
-
-                    button {
-                        border: none;
-                        cursor: pointer;
-                        height: 60px;
-                        transition: transform 0.4s ease-in;
-                        width: 80px;
-
-                        &.prev {
-                            background: url(imgs/vehicle/prev_dark.svg) no-repeat center;
-
-                            &:hover {
-                                transform: scale(1.2);
-                            }
-                        }
-
-                        &.next {
-                            background: url(imgs/vehicle/next_dark.svg) no-repeat center;
-
-                            &:hover {
-                                cursor: pointer;
-                                transform: scale(1.2);
-                            }
-                        }
-                    }
-                }
-
-                div {
-                    align-items: center;
-                    display: flex;
-                    justify-content: space-between;
-                    margin-top: 20px;
-
-                    figure {
-                        margin: 0;
-                        padding: 0;
-                        display: flex;
-                        justify-content: center;
-                        align-items: end;
-                        padding-bottom: 10px;
-                        height: 90px;
-                        /*80px+10px=90px*/
-                        width: 110px;
-
-                        &.model {
-                            background: url(imgs/vehicle/model_dark.svg) no-repeat center;
-                        }
-
-                        &.reference {
-                            background: url(imgs/vehicle/reference_dark.svg) no-repeat center;
-                        }
-
-                        &.color {
-                            background: url(imgs/vehicle/color_dark.svg) no-repeat center;
-                        }
-                    }
-                }
-            }
-
             background-color: #fbfcfc;
             border-radius: 8px;
             margin: 0 auto;
             height: 576px;
-            /* 576+24=600 */
             padding: 12px;
             width: 356px;
-            /* 356+24=380 */
 
+            /* --- MODO CLARO --- */
             header {
                 align-items: center;
                 display: flex;
                 justify-content: space-between;
 
-                figure {
-                    background: url(imgs/vehicle/logo_dark.png) no-repeat center /cover;
+                figure.logo {
+                    background: url(imgs/vehicle/logo_light.png) no-repeat center /cover;
                     height: 80px;
                     margin: 0;
                     width: 220px;
                 }
 
                 button.mode {
-                    background: url(imgs/vehicle/mode-light.svg) no-repeat center;
+                    background: url(imgs/vehicle/mode-light.svg) no-repeat center /cover;
                     border: none;
                     cursor: pointer;
                     height: 70px;
                     transition: transform 0.4s ease-in;
                     width: 100px;
 
-                    &.hover {
+                    &:hover {
                         transform: scale(1.1);
+                    }
+                }
+            }
+
+            nav {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 20px;
+
+                figure.brand {
+                    background: url(imgs/vehicle/brand_light.svg) no-repeat center /contain;
+                    color: #141516;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 30px;
+                    width: 200px;
+                    margin: 0;
+                }
+
+                button {
+                    border: none;
+                    cursor: pointer;
+                    height: 60px;
+                    transition: transform 0.4s ease-in;
+                    width: 80px;
+
+                    &.prev {
+                        background: url(imgs/vehicle/prev_light.svg) no-repeat center /contain;
+
+                        &:hover {
+                            transform: scale(1.2);
+                        }
+                    }
+
+                    &.next {
+                        background: url(imgs/vehicle/next_light.svg) no-repeat center /contain;
+
+                        &:hover {
+                            cursor: pointer;
+                            transform: scale(1.2);
+                        }
                     }
                 }
             }
@@ -144,25 +99,25 @@
                     align-items: end;
                     padding-bottom: 10px;
                     height: 90px;
-                    /*80px+10px=90px*/
                     width: 110px;
+                    color: #141516;
 
                     &.model {
-                        background: url(imgs/vehicle/model.svg) no-repeat center;
+                        background: url(imgs/vehicle/model_light.svg) no-repeat center /contain;
                     }
 
                     &.reference {
-                        background: url(imgs/vehicle/reference.svg) no-repeat center;
+                        background: url(imgs/vehicle/reference_light.svg) no-repeat center /contain;
                     }
 
                     &.color {
-                        background: url(imgs/vehicle/color.svg) no-repeat center;
+                        background: url(imgs/vehicle/color_light.svg) no-repeat center /contain;
                     }
                 }
             }
 
             figure.landscape {
-                background: url(imgs/vehicle/landscape.png) no-repeat center /cover;
+                background: url(imgs/vehicle/landscape_light.svg) no-repeat center /cover;
                 margin: 0;
                 margin-top: 12px;
                 height: 206px;
@@ -170,26 +125,57 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                position: relative;
+                overflow: hidden;
+                border-radius: 0.4rem;
 
                 div.frame {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+
+                    div.layer {
+                        position: absolute;
+                        left: 0;
+                        width: 695px;
+                    }
+
                     div.sky {
-                        background: url(imgs/vehicle/sky-night.png) repeat-x 0 bottom /contain;
+                        background: url(imgs/vehicle/sky_light.png) repeat-x 0 bottom /contain;
+                        top: 0;
+                        height: 55%;
+                        z-index: 1;
                     }
+
                     div.mountains {
-                        background: url(imgs/vehicle/mountains-night.png) repeat-x 0 bottom /contain;
+                        background: url(imgs/vehicle/mountains_light.png) repeat-x 0 bottom /contain;
+                        top: 22%;
+                        height: 55%;
+                        z-index: 2;
                     }
+
                     div.route {
-                        background: url(imgs/vehicle/route-night.png) repeat-x 0 bottom /contain;
+                        background: url(imgs/vehicle/route_light.png) repeat-x 0 bottom /contain;
+                        bottom: 0;
+                        height: 28%;
+                        z-index: 3;
+                    }
+
+                    img.moto {
+                        position: absolute;
+                        height: 120px;
+                        width: auto;
+                        transition: all 0.3s ease;
+                        border: none !important;
+                        border-radius: 0 !important;
+                        left: 50%;
+                        bottom: 10px;
+                        transform: translateX(-50%);
+                        z-index: 9;
                     }
                 }
-            }
-
-            figure.landscape img.moto {
-                height: 120px;
-                width: auto;
-                transition: all 0.3s ease;
-                border: none !important;
-                border-radius: 0 !important;
             }
 
             menu {
@@ -209,23 +195,23 @@
                     transition: transform 0.4s ease-in;
 
                     &.btn-on {
-                        background: url(imgs/vehicle/btn-on.svg) no-repeat center /contain;
+                        background: url(imgs/vehicle/btn-on_light.svg) no-repeat center /contain;
                     }
 
                     &.btn-forward {
-                        background: url(imgs/vehicle/btn-forward.svg) no-repeat center /contain;
+                        background: url(imgs/vehicle/btn-forward_light.svg) no-repeat center /contain;
                     }
 
                     &.btn-stop {
-                        background: url(imgs/vehicle/btn-stop.svg) no-repeat center /contain;
+                        background: url(imgs/vehicle/btn-stop_light.svg) no-repeat center /contain;
                     }
 
                     &.btn-backward {
-                        background: url(imgs/vehicle/btn-backward.svg) no-repeat center /contain;
+                        background: url(imgs/vehicle/btn-backward_light.svg) no-repeat center /contain;
                     }
 
                     &.btn-off {
-                        background: url(imgs/vehicle/btn-off.svg) no-repeat center /contain;
+                        background: url(imgs/vehicle/btn-off_light.svg) no-repeat center /contain;
                     }
 
                     &:hover {
@@ -234,8 +220,114 @@
                     }
                 }
             }
+
+            /* --- MODO OSCURO --- */
+            &.dark {
+                background-color: #13171A;
+
+                header {
+                    figure.logo {
+                        background: url(imgs/vehicle/logo_dark.png) no-repeat center /cover;
+                    }
+
+                    button.mode {
+                        background: url(imgs/vehicle/mode-dark.svg) no-repeat center /cover;
+                        width: 105px;
+
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+
+                nav {
+                    figure.brand {
+                        background: url(imgs/vehicle/brand_dark.svg) no-repeat center /contain;
+                        color: #fff;
+                    }
+
+                    button {
+                        &.prev {
+                            background: url(imgs/vehicle/prev_dark.svg) no-repeat center /contain;
+
+                            &:hover {
+                                transform: scale(1.2);
+                            }
+                        }
+
+                        &.next {
+                            background: url(imgs/vehicle/next_dark.svg) no-repeat center /contain;
+
+                            &:hover {
+                                cursor: pointer;
+                                transform: scale(1.2);
+                            }
+                        }
+                    }
+                }
+
+                div {
+                    figure {
+                        color: #fff;
+
+                        &.model {
+                            background: url(imgs/vehicle/model_dark.svg) no-repeat center /contain;
+                        }
+
+                        &.reference {
+                            background: url(imgs/vehicle/reference_dark.svg) no-repeat center /contain;
+                        }
+
+                        &.color {
+                            background: url(imgs/vehicle/color_dark.svg) no-repeat center /contain;
+                        }
+                    }
+                }
+
+                figure.landscape {
+                    background: url(imgs/vehicle/landscape_dark.png) no-repeat center /cover;
+
+                    div.frame {
+                        div.sky {
+                            background: url(imgs/vehicle/sky_dark.png) repeat-x 0 bottom /contain;
+                            
+                        }
+
+                        div.mountains {
+                            background: url(imgs/vehicle/mountains_dark.png) repeat-x 0 bottom /contain;
+                        }
+
+                        div.route {
+                            background: url(imgs/vehicle/route_dark.png) repeat-x 0 bottom /contain;
+                        }
+                    }
+                }
+
+                menu {
+                    button {
+                        &.btn-on {
+                            background: url(imgs/vehicle/btn-on.svg) no-repeat center /contain;
+                        }
+
+                        &.btn-forward {
+                            background: url(imgs/vehicle/btn-forward.svg) no-repeat center /contain;
+                        }
+
+                        &.btn-stop {
+                            background: url(imgs/vehicle/btn-stop.svg) no-repeat center /contain;
+                        }
+
+                        &.btn-backward {
+                            background: url(imgs/vehicle/btn-backward.svg) no-repeat center /contain;
+                        }
+
+                        &.btn-off {
+                            background: url(imgs/vehicle/btn-off.svg) no-repeat center /contain;
+                        }
+                    }
+                }
+            }
         }
-        
     </style>
 </head>
 
@@ -253,8 +345,6 @@
         </header>
         <section>
             <div class="recuadro">
-                <!-- <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/design/pMp5KLlYdakjPs2lvlf0kD/JS-Class-Vehicle?node-id=0-1&embed-host=share" allowfullscreen></iframe> -->
-
                 <div class="vehicle">
                     <header>
                         <figure class="logo"></figure>
@@ -265,6 +355,7 @@
                         <figure class="brand"></figure>
                         <button class="next"></button>
                     </nav>
+                    
                     <div>
                         <figure class="model"></figure>
                         <figure class="reference"></figure>
@@ -272,7 +363,12 @@
                     </div>
 
                     <figure class="landscape">
-                        <img class="moto" src="" alt="Moto">
+                        <div class="frame">
+                            <div class="layer sky"></div>
+                            <div class="layer mountains"></div>
+                            <div class="layer route"></div>
+                            <img class="moto" src="" alt="Moto">
+                        </div>
                     </figure>
 
                     <menu>
@@ -294,7 +390,6 @@
         const layers  = document.querySelectorAll('.layer');
 
         // Labels (Attributes)
-
         const lbrand = document.querySelector('.brand');
         const lmodel = document.querySelector('.model');
         const lrefer = document.querySelector('.reference');
@@ -334,7 +429,10 @@
                 this.model = model;
                 this.color = color;
                 this.image = image;
-                this.isOn = false;;
+                this.isOn  = false;
+                this.isPaused      = true;
+                this.isReversed    = false;
+                this.lastTimestamp = 0;
                 this.displayData();
 
                 // Botón para bloquear "prev" cuando cargue la página
@@ -358,8 +456,7 @@
                 lcolor.textContent = this.color;
                 lmoto.setAttribute('src', this.image);
 
-                //console.table(vehicles.attrs);
-                console.table(vehicles.attrs); /* attrs: Atributos */
+                console.table(vehicles.attrs);
             }
 
             powerOn() {
@@ -370,10 +467,10 @@
             }
 
             powerOff() {
-                if (this.isOn) {
+                if (this.isOn && this.isPaused) {
                     this.isOn = false;
                     requestAnimationFrame(vibrate);
-                    lmoto.style.transform = 'translate(0, 0px)';
+                    lmoto.style.transform = 'translateX(-50%) translateY(0px)';
                 }
             }
 
@@ -434,7 +531,6 @@
                     moto.disabledButton(bnext);
                 }
             }
-            // console.log(vehicles.brand)
             moto.displayData();
         });
 
@@ -452,7 +548,6 @@
                     moto.disabledButton(bprev);
                 }
             }
-            // console.log(vehicles.brand)
             moto.displayData();
         });
 
@@ -478,7 +573,7 @@
 
         function vibrate() {
             if (!moto.isOn) return;
-            lmoto.style.transform = `translate(0, ${1 * Math.sin(Date.now() / 25)}px)`
+            lmoto.style.transform = `translateX(-50%) translateY(${1 * Math.sin(Date.now() / 25)}px)`;
             requestAnimationFrame(vibrate);
         }
 
@@ -489,14 +584,14 @@
         })
 
         function animateParallax(timestamp) {
-            if (!car.isPaused) {
-                const delta   = timestamp - (car.lastTimestamp || timestamp)
-                car.lastTimestamp = timestamp
+            if (!moto.isPaused) {
+                const delta   = timestamp - (moto.lastTimestamp || timestamp)
+                moto.lastTimestamp = timestamp
 
                 layers.forEach((layer, index) => {
                 let currentPos = (parseFloat(layer.dataset.pos) || 0) 
                                  + speedFactors[index] 
-                                 * (car.isReversed ? delta : -delta)
+                                 * (moto.isReversed ? delta : -delta)
                 layer.style.backgroundPositionX = `${currentPos}px`
                 layer.dataset.pos = currentPos
                 })
